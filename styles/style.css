@@ -1,0 +1,458 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2.4rem 2rem 2rem;
+}
+header .hamburger-logo-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+header .hamburger-logo-group .hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 6px;
+  cursor: pointer;
+}
+header .hamburger-logo-group .hamburger .line {
+  background-color: hsl(219deg, 9%, 45%);
+  width: 1.5rem;
+  height: 0.2rem;
+}
+header .hamburger-logo-group .menu {
+  background-color: hsla(0deg, 0%, 0%, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 10;
+}
+header .hamburger-logo-group .menu .slide-menu {
+  background-color: hsl(0deg, 0%, 100%);
+  height: 100%;
+  width: 66vw;
+  padding: 2.3rem;
+}
+header .hamburger-logo-group .menu .slide-menu img {
+  transition: transform 0.5s ease;
+}
+header .hamburger-logo-group .menu .slide-menu img:hover {
+  cursor: pointer;
+  transform: rotate(90deg);
+}
+header .hamburger-logo-group .menu .slide-menu ul {
+  list-style: none;
+  margin-top: 5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+}
+header .hamburger-logo-group .menu .slide-menu ul li a,
+header .hamburger-logo-group .menu .slide-menu ul li :active,
+header .hamburger-logo-group .menu .slide-menu ul li :visited {
+  text-decoration: none;
+  color: hsl(220deg, 13%, 13%);
+}
+header .hamburger-logo-group .menu .slide-menu ul li:hover {
+  text-decoration: underline;
+  opacity: 0.75;
+}
+header .hamburger-logo-group .hidden {
+  display: none;
+}
+header .cart-avatar-group {
+  display: flex;
+  flex-direction: row;
+  gap: 2.2rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.2rem;
+}
+header .cart-avatar-group .btnCart {
+  cursor: pointer;
+  position: relative;
+}
+header .cart-avatar-group .btnCart .cart-count {
+  position: absolute;
+  top: -25%;
+  right: -25%;
+  background-color: hsl(26deg, 100%, 55%);
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 100%;
+  padding: 0.1rem 0.6rem;
+  border-radius: 1rem;
+}
+header .cart-avatar-group .avatar {
+  width: 2.5rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+header .cart-avatar-group .avatar:hover {
+  border: 1px solid hsl(26deg, 100%, 55%);
+  border-radius: 50%;
+}
+header .cart {
+  position: absolute;
+  right: 1rem;
+  top: calc(7% + 1rem);
+  width: 39.5rem;
+  z-index: 1;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem 1rem rgba(0, 0, 0, 0.1), 0 1rem 2rem 1rem rgba(0, 0, 0, 0.1);
+}
+header .cart .cart-header {
+  border-bottom: 1px solid hsl(220deg, 14%, 75%);
+  padding: 2.4rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+header .cart .products-in-cart .item {
+  margin: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .cart .products-in-cart .item .product-img {
+  width: 5rem;
+  border-radius: 0.5rem;
+}
+header .cart .products-in-cart .item .details {
+  color: hsl(219deg, 9%, 45%);
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+header .cart .products-in-cart .item .details .price-group {
+  display: flex;
+  gap: 0.6rem;
+}
+header .cart .products-in-cart .item .details .price-group .total-amount {
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: hsla(0deg, 0%, 0%, 0.75);
+}
+header .cart .products-in-cart .item #btnDelete {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+header .cart .products-in-cart .item #btnDelete:hover {
+  cursor: pointer;
+  background-color: hsl(25deg, 100%, 94%);
+}
+header .cart .msg-empty {
+  color: hsl(219deg, 9%, 45%);
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 7.8rem 0;
+}
+header .cart .checkout {
+  background-color: hsl(26deg, 100%, 55%);
+  color: hsl(0deg, 0%, 100%);
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 70;
+  margin: 2.4rem;
+  padding: 1.8rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+header .cart .hidden {
+  display: none;
+}
+header .hidden {
+  display: none;
+}
+
+.lightbox {
+  position: relative;
+}
+.lightbox .product-hero {
+  width: 100%;
+}
+.lightbox .previous {
+  left: 4%;
+}
+.lightbox .previous:hover {
+  left: 3%;
+}
+.lightbox .next {
+  right: 4%;
+}
+.lightbox .next:hover {
+  right: 3%;
+}
+.lightbox .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.lightbox .thumb-gallery {
+  display: none;
+}
+
+.product {
+  padding: 2rem 2.4rem 4.4rem 2.4rem;
+}
+.product .company-name {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: hsl(26deg, 100%, 55%);
+  letter-spacing: 0.18rem;
+}
+.product .title {
+  color: hsl(220deg, 13%, 13%);
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-top: 1.3rem;
+  line-height: 118%;
+}
+.product .description {
+  font-size: 1.5rem;
+  color: hsl(219deg, 9%, 45%);
+  line-height: 105%;
+  margin-top: 1.6rem;
+}
+.product .price-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.product .price-wrapper .group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.product .price-wrapper .group .price {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.product .price-wrapper .group .discount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(26deg, 100%, 55%);
+  background-color: hsl(25deg, 100%, 94%);
+  margin-left: 1.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.product .price-wrapper .old-price {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: hsl(220deg, 14%, 75%);
+  text-decoration: line-through;
+}
+.product .counter-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(223deg, 64%, 98%);
+  padding: 1.2rem 2.4rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+}
+.product .counter-wrapper .counter {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.product .counter-wrapper #btnMinus,
+.product .counter-wrapper #btnPlus {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.product .counter-wrapper #btnMinus:hover,
+.product .counter-wrapper #btnPlus:hover {
+  opacity: 0.5;
+  background-color: hsl(25deg, 100%, 94%);
+}
+.product .btn {
+  background-color: hsl(26deg, 100%, 55%);
+  color: white;
+  margin-top: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.55rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  padding: 1.9rem;
+  box-shadow: 0px 20px 30px 0px hsl(25deg, 100%, 94%);
+  cursor: pointer;
+}
+.product .btn img {
+  height: 1.5rem;
+  filter: brightness(300%);
+}
+
+@media screen and (min-width: 1320px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  header {
+    padding: 0;
+    border-bottom: 1px solid hsl(220deg, 14%, 75%);
+  }
+  header .hamburger-logo-group {
+    gap: 5.4rem;
+  }
+  header .hamburger-logo-group .hamburger {
+    display: none;
+  }
+  header .hamburger-logo-group .menu {
+    display: block;
+    position: unset;
+    height: unset;
+  }
+  header .hamburger-logo-group .menu .slide-menu {
+    width: unset;
+    padding: 0;
+  }
+  header .hamburger-logo-group .menu .slide-menu img {
+    display: none;
+  }
+  header .hamburger-logo-group .menu .slide-menu ul {
+    flex-direction: row;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: hsl(219deg, 9%, 45%);
+    gap: 3.4rem;
+  }
+  header .hamburger-logo-group .menu .slide-menu ul li {
+    text-decoration: none !important;
+  }
+  header .hamburger-logo-group .menu .slide-menu ul a {
+    display: block;
+    padding: 4rem 0;
+    border-bottom: 3px solid transparent;
+  }
+  header .hamburger-logo-group .menu .slide-menu ul a:hover {
+    color: hsl(220deg, 13%, 13%);
+    text-decoration: none !important;
+    font-weight: 700;
+    border-bottom: 3px solid hsl(26deg, 100%, 55%);
+  }
+  .cart-avatar-group {
+    gap: 4.5rem;
+  }
+  .cart-avatar-group .avatar {
+    width: 5rem;
+  }
+  .cart {
+    left: 105rem;
+    top: 10%;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10rem;
+    padding: 9rem 5rem;
+  }
+  .lightbox {
+    width: 100%;
+  }
+  .lightbox .product-hero {
+    border-radius: 1.5rem;
+  }
+  .lightbox .previous,
+.lightbox .next {
+    display: none;
+  }
+  .lightbox .thumb-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+  }
+  .lightbox .thumb-gallery .pic {
+    display: flex;
+    width: 20%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+  .lightbox .thumb-gallery .pic img {
+    width: 100%;
+  }
+  .lightbox .thumb-gallery .pic img:hover {
+    opacity: 0.75;
+  }
+  .lightbox .thumb-gallery .active {
+    border: 2px solid hsl(26deg, 100%, 55%);
+  }
+  .lightbox .thumb-gallery .active img {
+    opacity: 0.5;
+  }
+  .product {
+    width: 100%;
+    padding: 3rem 0 3rem 3rem;
+  }
+  .product .title {
+    font-size: 4.4rem;
+    margin-top: 1.8rem;
+  }
+  .product .description {
+    margin-top: 3.5rem;
+    font-size: 1.63rem;
+  }
+  .product .price-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2.4rem;
+    gap: 0.8rem;
+  }
+  .product .count-btn-group {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .product .count-btn-group .counter-wrapper {
+    width: 62.5%;
+  }
+  .product .count-btn-group .btn {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
